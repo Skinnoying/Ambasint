@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Pencarian</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hasil untuk '{{ username }}'</h1>
+        <p>✅ Valid: {{ valid_count }} | ❌ Tidak Valid: {{ invalid_count }}</p>
+        <ul>
+            {% for platform, result in results.items() %}
+                <li><strong>{{ platform }}:</strong> {{ result|safe }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Cek Username Lain</a>
+    </div>
+</body>
+</html>

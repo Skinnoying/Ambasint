@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>Ambasint | the next username checker.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Ambasint</h1>
+    <form method="POST" action="/" id="checkForm">
+      <input
+        type="text"
+        name="username"
+        placeholder="Masukkan username..."
+        required
+        autocomplete="off"
+        value="{{ username or '' }}"
+        id="usernameInput"
+        maxlength="30"
+      />
+      <button type="submit" id="submitBtn">
+        Check
+      </button>
+    </form>
+
+    <div id="loading" class="loading" style="display:none;">
+      <div class="spinner"></div> Mencari...
+    </div>
+
+    {% if results is not none %}
+    <h2>Hasil Pencarian untuk: <span class="highlight">"{{ username }}"</span></h2>
+    <div class="results">
+      {% for name, result in results.items() %}
+      <div class="result {{ 'valid' if result.valid else 'invalid' }}">
+        <span class="icon">{% if result.valid %}✔️{% else %}❌{% endif %}</span>
+        <strong>{{ name }}</strong> :
+        {% if result.valid %}
+        <a href="{{ result.url }}" target="_blank" rel="noopener noreferrer">Profile ditemukan</a>
+        {% else %}
+        Tidak ditemukan
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
