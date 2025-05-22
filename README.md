@@ -1,12 +1,12 @@
 
-# 🔍 Username Checker OSINT Tool
+# 🔍 Ambasint
 
 ![badge](https://img.shields.io/badge/OSINT-Tool-blueviolet?style=for-the-badge)
 ![python](https://img.shields.io/badge/Python-3.9%2B-yellow?style=for-the-badge)
 ![flask](https://img.shields.io/badge/Flask-Web%20App-green?style=for-the-badge)
 ![status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 
-**Username Checker** adalah tool OSINT (Open-Source Intelligence) berbasis web untuk melacak keberadaan username di berbagai jejaring sosial dan platform online. Cocok digunakan untuk investigasi digital, cyber security, dan riset open-source.
+**Ambasint** adalah tool OSINT (Open-Source Intelligence) berbasis web untuk melacak keberadaan username di berbagai jejaring sosial dan platform online. Cocok digunakan untuk investigasi digital, cyber security, dan riset open-source.
 
 ---
 
@@ -24,8 +24,8 @@
 
 ```bash
 # 1. Clone repo ini
-git clone https://github.com/username/username-checker.git
-cd username-checker
+git clone https://github.com/Skinnoying/Ambasint.git
+cd Ambasint
 
 # 2. (Opsional) Aktifkan virtual environment
 python -m venv venv
@@ -45,14 +45,14 @@ python app.py
 1. Jalankan `python app.py`.
 2. Buka browser ke `http://127.0.0.1:5000`.
 3. Masukkan username yang ingin dicari.
-4. Lihat hasil di dashboard: akun valid/invalid lengkap dengan link ke profil.
+4. Lihat hasil: akun valid/invalid lengkap dengan link ke profil.
 
 ---
 
 ## 📁 Struktur Direktori
 
 ```
-username_checker/
+Ambasint/
 ├── app.py
 ├── checker/
 │   ├── __init__.py
@@ -67,8 +67,7 @@ username_checker/
 ├── templates/
 │   ├── index.html
 │   └── result.html
-├── requirements.txt
-└── README.md
+└── requirements.txt
 ```
 
 ---
